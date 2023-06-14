@@ -174,29 +174,29 @@ namespace GameDevJobs.Migrations
             modelBuilder.Entity("GameDevJobs.Models.Offer", b =>
                 {
                     b.HasOne("GameDevJobs.Models.Category", "Category")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("GameDevJobs.Models.Company", "Company")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("GameDevJobs.Models.Location", "Location")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("GameDevJobs.Models.Seniority", "Seniority")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("SeniorityId");
 
                     b.HasOne("GameDevJobs.Models.WorkingTime", "WorkingTime")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("WorkingTimeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -210,31 +210,6 @@ namespace GameDevJobs.Migrations
                     b.Navigation("Seniority");
 
                     b.Navigation("WorkingTime");
-                });
-
-            modelBuilder.Entity("GameDevJobs.Models.Category", b =>
-                {
-                    b.Navigation("Offers");
-                });
-
-            modelBuilder.Entity("GameDevJobs.Models.Company", b =>
-                {
-                    b.Navigation("Offers");
-                });
-
-            modelBuilder.Entity("GameDevJobs.Models.Location", b =>
-                {
-                    b.Navigation("Offers");
-                });
-
-            modelBuilder.Entity("GameDevJobs.Models.Seniority", b =>
-                {
-                    b.Navigation("Offers");
-                });
-
-            modelBuilder.Entity("GameDevJobs.Models.WorkingTime", b =>
-                {
-                    b.Navigation("Offers");
                 });
 #pragma warning restore 612, 618
         }

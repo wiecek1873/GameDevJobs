@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDevJobs", "GameDevJobs\GameDevJobs.csproj", "{4DB2848C-CB64-465C-AB6D-DEC7EBEBD18E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDevJobs", "GameDevJobs\GameDevJobs.csproj", "{76258D43-A86C-4F1D-8842-AEDEF3278386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DB2848C-CB64-465C-AB6D-DEC7EBEBD18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DB2848C-CB64-465C-AB6D-DEC7EBEBD18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DB2848C-CB64-465C-AB6D-DEC7EBEBD18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DB2848C-CB64-465C-AB6D-DEC7EBEBD18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76258D43-A86C-4F1D-8842-AEDEF3278386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76258D43-A86C-4F1D-8842-AEDEF3278386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76258D43-A86C-4F1D-8842-AEDEF3278386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76258D43-A86C-4F1D-8842-AEDEF3278386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {62E8CB3B-F21A-4E2A-8713-14367290FA2A}
+		SolutionGuid = {087465A4-9F12-4375-AB36-CCDAD5DD6FBE}
 	EndGlobalSection
 EndGlobal

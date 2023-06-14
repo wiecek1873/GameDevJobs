@@ -6,6 +6,5 @@
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
         public string? Website { get; set; }
-        public ICollection<Offer> Offers { get; set; } = null!;
     }
 }
