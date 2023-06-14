@@ -12,10 +12,6 @@ public class GameDevJobsContext : DbContext
     public DbSet<WorkingTime> WorkingTimes { get; set; } = null!;
     public DbSet<Seniority> Seniorities { get; set; } = null!;
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql("User ID=postgres;Password=admin;Host=localhost;Port=5432;Database=GameDevJobs;Pooling=true;Connection Lifetime=0;");
-    }
-
+    public GameDevJobsContext(DbContextOptions<GameDevJobsContext> options) : base(options) { }
 }
 

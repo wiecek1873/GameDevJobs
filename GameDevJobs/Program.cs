@@ -1,7 +1,12 @@
+using GameDevJobs.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<GameDevJobsContext>(option =>
+    option.UseNpgsql(builder.Configuration.GetConnectionString("GameDevJobs")));
 
 var app = builder.Build();
 
