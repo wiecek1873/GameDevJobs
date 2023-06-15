@@ -3,6 +3,7 @@ using System;
 using GameDevJobs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GameDevJobs.Migrations
 {
     [DbContext(typeof(GameDevJobsContext))]
-    partial class GameDevJobsContextModelSnapshot : ModelSnapshot
+    [Migration("20230615222616_AddedRelations")]
+    partial class AddedRelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace GameDevJobs.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("GameDevJobs.Models.Category", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,7 +42,7 @@ namespace GameDevJobs.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.Company", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,7 +65,7 @@ namespace GameDevJobs.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.Location", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Location", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,7 +82,7 @@ namespace GameDevJobs.Migrations
                     b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.Offer", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Offer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,10 +102,10 @@ namespace GameDevJobs.Migrations
                     b.Property<int>("LocationId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SalaryMax")
+                    b.Property<int?>("SalaryMax")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SalaryMin")
+                    b.Property<int?>("SalaryMin")
                         .HasColumnType("integer");
 
                     b.Property<int?>("SeniorityId")
@@ -137,7 +140,7 @@ namespace GameDevJobs.Migrations
                     b.ToTable("Offers");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.Seniority", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Seniority", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -154,7 +157,7 @@ namespace GameDevJobs.Migrations
                     b.ToTable("Seniorities");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.WorkingTime", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.WorkingTime", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -171,32 +174,32 @@ namespace GameDevJobs.Migrations
                     b.ToTable("WorkingTimes");
                 });
 
-            modelBuilder.Entity("GameDevJobs.Models.Offer", b =>
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Offer", b =>
                 {
-                    b.HasOne("GameDevJobs.Models.Category", "Category")
-                        .WithMany()
+                    b.HasOne("GameDevJobs.Domain.Entities.Category", "Category")
+                        .WithMany("Offers")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameDevJobs.Models.Company", "Company")
-                        .WithMany()
+                    b.HasOne("GameDevJobs.Domain.Entities.Company", "Company")
+                        .WithMany("Offers")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameDevJobs.Models.Location", "Location")
-                        .WithMany()
+                    b.HasOne("GameDevJobs.Domain.Entities.Location", "Location")
+                        .WithMany("Offers")
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameDevJobs.Models.Seniority", "Seniority")
-                        .WithMany()
+                    b.HasOne("GameDevJobs.Domain.Entities.Seniority", "Seniority")
+                        .WithMany("Offers")
                         .HasForeignKey("SeniorityId");
 
-                    b.HasOne("GameDevJobs.Models.WorkingTime", "WorkingTime")
-                        .WithMany()
+                    b.HasOne("GameDevJobs.Domain.Entities.WorkingTime", "WorkingTime")
+                        .WithMany("Offers")
                         .HasForeignKey("WorkingTimeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -210,6 +213,31 @@ namespace GameDevJobs.Migrations
                     b.Navigation("Seniority");
 
                     b.Navigation("WorkingTime");
+                });
+
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Offers");
+                });
+
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Company", b =>
+                {
+                    b.Navigation("Offers");
+                });
+
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Location", b =>
+                {
+                    b.Navigation("Offers");
+                });
+
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.Seniority", b =>
+                {
+                    b.Navigation("Offers");
+                });
+
+            modelBuilder.Entity("GameDevJobs.Domain.Entities.WorkingTime", b =>
+                {
+                    b.Navigation("Offers");
                 });
 #pragma warning restore 612, 618
         }

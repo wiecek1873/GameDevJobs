@@ -21,11 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GameDevJobs.Application\GameDevJobs.Application.csproj" />
     <ProjectReference Include="..\GameDevJobs.Infrastructure\GameDevJobs.Infrastructure.csproj" />
   </ItemGroup>

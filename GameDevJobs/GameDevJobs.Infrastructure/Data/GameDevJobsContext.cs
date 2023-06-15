@@ -1,4 +1,4 @@
-﻿using GameDevJobs.Models;
+﻿using GameDevJobs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Data;
