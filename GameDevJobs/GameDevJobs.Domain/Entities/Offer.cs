@@ -26,5 +26,4 @@ public class Offer
     public DateOnly Date { get; set; }
     public int Views { get; set; }
     public string Url { get; set; } = null!;
-
 }
