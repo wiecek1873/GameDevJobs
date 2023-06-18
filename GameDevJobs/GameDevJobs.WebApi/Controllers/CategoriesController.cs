@@ -45,7 +45,7 @@ public class CategoriesController : ControllerBase
     {
         var newCategory = await _categoriesService.CreateCategory(requestCategoryDto);
 
-        return Created($"api/categories/{newCategory.Id}", newCategory);
+        return Created($"api/categories/{newCategory.Id}", newCategory); //todo Find out what does it mean and how it works
     }
 
     [HttpPut("{categoryId}")]
@@ -54,7 +54,7 @@ public class CategoriesController : ControllerBase
     {
         await _categoriesService.UpdateCategory(categoryId, updatedCategoryDto);
 
-        return NoContent();
+        return NoContent(); //todo Is this response ok?
     }
 
     [HttpDelete("categoryId")]
@@ -63,6 +63,6 @@ public class CategoriesController : ControllerBase
     {
         await _categoriesService.DeleteCategory(categoryId);
 
-        return Ok();
+        return Ok(); //todo Is this response ok?
     }
 }
