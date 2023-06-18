@@ -13,14 +13,6 @@ public class CategoriesRepository : ICategoriesRepository
         _gameDevJobsContext = gameDevJobsContext;
     }
 
-    public async Task<Category?> CreateCategory(Category newCategory)
-    {
-        await _gameDevJobsContext.Categories.AddAsync(newCategory); //todo Should I use AddAsync() or Add()?
-        await _gameDevJobsContext.SaveChangesAsync();
-
-        return newCategory;
-    }
-
     //todo Should i use ICollection<Category> or List<Category> in this case?
     public async Task<ICollection<Category>?> GetCategories()
     {
@@ -31,6 +23,14 @@ public class CategoriesRepository : ICategoriesRepository
     public async Task<Category?> GetCategory(int id)
     {
         return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
+    }
+
+    public async Task<Category?> CreateCategory(Category newCategory)
+    {
+        await _gameDevJobsContext.Categories.AddAsync(newCategory); //todo Should I use AddAsync() or Add()?
+        await _gameDevJobsContext.SaveChangesAsync();
+
+        return newCategory;
     }
 
     public async Task UpdateCategory(int id, Category updatedCategory)

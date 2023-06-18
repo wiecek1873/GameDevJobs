@@ -18,15 +18,6 @@ public class CategoriesService : ICategoriesService
         _mapper = mapper;
     }
 
-    public async Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
-    {
-        var newCategory = _mapper.Map<Category>(newCategoryDto);
-
-        await _categoriesRepository.CreateCategory(newCategory);
-
-        return _mapper.Map<CategoryDto>(newCategory);
-    }
-
     public async Task<List<CategoryDto>> GetCategories()
     {
         var categories = await _categoriesRepository.GetCategories();
@@ -43,6 +34,16 @@ public class CategoriesService : ICategoriesService
             throw new NotFoundException("Category with this id does not exist."); 
 
         return _mapper.Map<CategoryDto>(category);
+    }
+
+    public async Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
+    {
+        //todo Prevent duplicates
+        var newCategory = _mapper.Map<Category>(newCategoryDto);
+
+        await _categoriesRepository.CreateCategory(newCategory);
+
+        return _mapper.Map<CategoryDto>(newCategory);
     }
 
     public async Task UpdateCategory(int categoryId, RequestCategoryDto updatedCategoryDto)

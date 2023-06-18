@@ -41,7 +41,7 @@ public class CategoriesController : ControllerBase
 
     [HttpPost]
     [SwaggerOperation(Summary = "Add a new category")]
-    public async Task<IActionResult> AddCategory([FromBody] RequestCategoryDto requestCategoryDto)
+    public async Task<IActionResult> CreateCategory([FromBody] RequestCategoryDto requestCategoryDto)
     {
         var newCategory = await _categoriesService.CreateCategory(requestCategoryDto);
 

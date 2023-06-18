@@ -4,11 +4,11 @@ namespace GameDevJobs.Domain.Interfaces;
 
 public interface ICategoriesRepository
 {
-    Task<Category?> CreateCategory(Category newCategory);
-
     Task<ICollection<Category>?> GetCategories();
-    
+ 
     Task<Category?> GetCategory(int id);
+    
+    Task<Category?> CreateCategory(Category newCategory);
     
     Task UpdateCategory(int id, Category updatedCategory);
     
