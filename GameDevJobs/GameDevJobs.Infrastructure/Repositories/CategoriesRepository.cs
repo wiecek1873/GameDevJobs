@@ -13,9 +13,12 @@ public class CategoriesRepository : ICategoriesRepository
         _gameDevJobsContext = gameDevJobsContext;
     }
 
-    public async Task<Category?> AddCategory(Category newCategory)
+    public async Task<Category?> CreateCategory(Category newCategory)
     {
-        throw new NotImplementedException();
+        await _gameDevJobsContext.Categories.AddAsync(newCategory); //todo Should I use AddAsync() or Add()?
+        await _gameDevJobsContext.SaveChangesAsync();
+
+        return newCategory;
     }
 
     //todo Should i use ICollection<Category> or List<Category> in this case?
@@ -30,14 +33,23 @@ public class CategoriesRepository : ICategoriesRepository
         return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
     }
 
-    public async Task<Category?> UpdateCategory(int id, Category updatedCategory)
+    public async Task UpdateCategory(int id, Category updatedCategory)
     {
-        throw new NotImplementedException();
+        var categoryToUpdate = await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
+
+        if (categoryToUpdate != null)
+            categoryToUpdate.Name = updatedCategory.Name;
+
+        await _gameDevJobsContext.SaveChangesAsync();
     }
 
-    public Task DeleteCategory(int id)
+    public async Task DeleteCategory(int id)
     {
-        throw new NotImplementedException();
-    }
+        var categoryToDelete = await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
 
+        if (categoryToDelete != null)
+            _gameDevJobsContext.Categories.Remove(categoryToDelete);
+
+        await _gameDevJobsContext.SaveChangesAsync();
+    }
 }

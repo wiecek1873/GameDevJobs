@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using GameDevJobs.Application.Dto.Categories;
-using GameDevJobs.Application.Interfaces;
-using GameDevJobs.Domain.Interfaces;
 using GameDevJobs.Application.Exceptions;
+using GameDevJobs.Application.Interfaces;
+using GameDevJobs.Domain.Entities;
+using GameDevJobs.Domain.Interfaces;
 
 namespace GameDevJobs.Application.Services;
+
 public class CategoriesService : ICategoriesService
 {
     private readonly ICategoriesRepository _categoriesRepository;
@@ -16,9 +18,13 @@ public class CategoriesService : ICategoriesService
         _mapper = mapper;
     }
 
-    public Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
+    public async Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
     {
-        throw new NotImplementedException();
+        var newCategory = _mapper.Map<Category>(newCategoryDto);
+
+        await _categoriesRepository.CreateCategory(newCategory);
+
+        return _mapper.Map<CategoryDto>(newCategory);
     }
 
     public async Task<List<CategoryDto>> GetCategories()
@@ -27,24 +33,37 @@ public class CategoriesService : ICategoriesService
 
         return _mapper.Map<List<CategoryDto>>(categories);
     }
-
+     
     public async Task<CategoryDto> GetCategory(int categoryId)
     {
         var category = await _categoriesRepository.GetCategory(categoryId);
 
-        if (category == null)
-            throw new NotFoundException("Category with this id does not exist.");
+        //todo Should I handle this case or just throw null and don't care?
+        if (category == null) 
+            throw new NotFoundException("Category with this id does not exist."); 
 
         return _mapper.Map<CategoryDto>(category);
     }
 
-    public Task UpdateCategory(int categoryId, RequestCategoryDto updatedCategoryDto)
+    public async Task UpdateCategory(int categoryId, RequestCategoryDto updatedCategoryDto)
     {
-        throw new NotImplementedException();
+        var categoryToUpdate = await _categoriesRepository.GetCategory(categoryId);
+
+        if (categoryToUpdate == null)
+            throw new NotFoundException("Category with this id does not exist.");
+
+        categoryToUpdate = _mapper.Map<Category>(updatedCategoryDto);
+
+        await _categoriesRepository.UpdateCategory(categoryId, categoryToUpdate);
     }
 
-    public Task DeleteCategory(int categoryId)
+    public async Task DeleteCategory(int categoryId)
     {
-        throw new NotImplementedException();
+        var categoryToDelete = await _categoriesRepository.GetCategory(categoryId);
+
+        if (categoryToDelete == null)
+            throw new NotFoundException("Category with this id does not exist.");
+
+        await _categoriesRepository.DeleteCategory(categoryId);
     }
 }
