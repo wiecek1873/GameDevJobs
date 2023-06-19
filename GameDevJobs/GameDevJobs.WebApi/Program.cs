@@ -5,7 +5,6 @@ using GameDevJobs.Data;
 using GameDevJobs.Domain.Interfaces;
 using GameDevJobs.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using GameDevJobs.Application.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 

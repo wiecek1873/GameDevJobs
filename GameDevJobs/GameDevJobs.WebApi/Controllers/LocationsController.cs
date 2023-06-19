@@ -2,7 +2,6 @@
 using GameDevJobs.Application.Interfaces;
 using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace GameDevJobs.WebApi.Controllers;
 
@@ -33,7 +32,6 @@ public class LocationsController : ControllerBase
 
         return Ok(location);
     }
-
 
     [HttpPost]
     public async Task<IActionResult> CreateLocation([FromBody] RequestLocationDto requestLocationDto)

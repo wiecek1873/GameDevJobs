@@ -8,6 +8,9 @@ using GameDevJobs.Domain.Interfaces;
 namespace GameDevJobs.Application.Services;
 public class LocationsService : ILocationsService
 {
+    private const string NOT_FOUND_MESSAGE = "Location with this id does not exist.";
+    private const string CONFLICT_MESSAGE = "Location with this name already exist.";
+
     private readonly ILocationsRepository _locationsRepository;
     private readonly IMapper _mapper;
 
@@ -17,27 +20,27 @@ public class LocationsService : ILocationsService
         _mapper = mapper;
     }
 
-    public async Task<ICollection<LocationDto>?> GetLocationsAsync()
+    public async Task<ICollection<LocationDto>> GetLocationsAsync()
     {
         var locations = await _locationsRepository.GetLocationsAsync();
 
         return _mapper.Map<ICollection<LocationDto>>(locations);
     }
 
-    public async Task<LocationDto?> GetLocationAsync(int id)
+    public async Task<LocationDto> GetLocationAsync(int id)
     {
         var location = await _locationsRepository.GetLocationAsync(id);
 
         if (location == null)
-            throw new NotFoundException("Location with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         return _mapper.Map<LocationDto>(location);
     }
 
-    public async Task<LocationDto?> CreateLocationAsync(RequestLocationDto newLocationDto)
+    public async Task<LocationDto> CreateLocationAsync(RequestLocationDto newLocationDto)
     {
         if (await _locationsRepository.GetLocationAsync(newLocationDto.Name) != null)
-            throw new ConflictException("Location with this name already exist.");
+            throw new ConflictException(CONFLICT_MESSAGE);
 
         var newLocation = _mapper.Map<Location>(newLocationDto);
         newLocation = await _locationsRepository.CreateLocationAsync(newLocation);
@@ -50,7 +53,7 @@ public class LocationsService : ILocationsService
         var locationToUpdate = await _locationsRepository.GetLocationAsync(id);
 
         if (locationToUpdate == null)
-            throw new NotFoundException("Location with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         locationToUpdate = _mapper.Map<Location>(updatedLocationDto);
 
@@ -62,7 +65,7 @@ public class LocationsService : ILocationsService
         var locationDoDelete = await _locationsRepository.GetLocationAsync(id);
 
         if (locationDoDelete == null)
-            throw new NotFoundException("Location with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         await _locationsRepository.DeleteLocationAsync(id);
     }

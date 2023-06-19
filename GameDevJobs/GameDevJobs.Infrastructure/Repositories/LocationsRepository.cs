@@ -4,6 +4,7 @@ using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Infrastructure.Repositories;
+
 public class LocationsRepository : ILocationsRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;
