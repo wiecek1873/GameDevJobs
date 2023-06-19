@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GameDevJobs.Application.Exceptions
+﻿namespace GameDevJobs.Application.Exceptions
 {
     public class NotFoundException : Exception
     {

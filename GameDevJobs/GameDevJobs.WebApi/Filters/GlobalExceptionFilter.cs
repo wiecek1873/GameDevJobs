@@ -40,11 +40,11 @@ public class GlobalExceptionFilter : ExceptionFilterAttribute
         //    response.Content = context.Exception.Message;
         //    response.StatusCode = 405;
         //}
-        //if (context.Exception is ConflictException)
-        //{
-        //    response.Content = context.Exception.Message;
-        //    response.StatusCode = 409;
-        //}
+        if (context.Exception is ConflictException)
+        {
+            response.Content = context.Exception.Message;
+            response.StatusCode = 409;
+        }
 
         context.Result = response;
         base.OnException(context);

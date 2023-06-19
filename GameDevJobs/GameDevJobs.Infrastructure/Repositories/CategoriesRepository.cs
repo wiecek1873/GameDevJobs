@@ -25,6 +25,11 @@ public class CategoriesRepository : ICategoriesRepository
         return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
     }
 
+    public async Task<Category?> GetCategory(string name)
+    {
+        return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Name == name);
+    }
+
     public async Task<Category?> CreateCategory(Category newCategory)
     {
         await _gameDevJobsContext.Categories.AddAsync(newCategory); //todo Should I use AddAsync() or Add()?

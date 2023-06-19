@@ -7,6 +7,8 @@ public interface ICategoriesRepository
     Task<ICollection<Category>?> GetCategories();
  
     Task<Category?> GetCategory(int id);
+
+    Task<Category?> GetCategory(string name);
     
     Task<Category?> CreateCategory(Category newCategory);
     

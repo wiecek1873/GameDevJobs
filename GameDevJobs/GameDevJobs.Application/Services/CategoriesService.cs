@@ -38,7 +38,9 @@ public class CategoriesService : ICategoriesService
 
     public async Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
     {
-        //todo Prevent duplicates
+        if( await _categoriesRepository.GetCategory(newCategoryDto.Name) != null)
+            throw new ConflictException("Category with this name already exist");
+
         var newCategory = _mapper.Map<Category>(newCategoryDto);
 
         await _categoriesRepository.CreateCategory(newCategory);
