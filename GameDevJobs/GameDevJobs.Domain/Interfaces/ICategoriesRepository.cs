@@ -4,15 +4,15 @@ namespace GameDevJobs.Domain.Interfaces;
 
 public interface ICategoriesRepository
 {
-    Task<ICollection<Category>?> GetCategories();
+    Task<ICollection<Category>?> GetCategoriesAsync();
  
-    Task<Category?> GetCategory(int id);
+    Task<Category?> GetCategoryAsync(int id);
 
-    Task<Category?> GetCategory(string name);
+    Task<Category?> GetCategoryAsync(string name);
     
-    Task<Category?> CreateCategory(Category newCategory);
+    Task<Category?> CreateCategoryAsync(Category newCategory);
     
-    Task UpdateCategory(int id, Category updatedCategory);
+    Task UpdateCategoryAsync(int id, Category updatedCategory);
     
-    Task DeleteCategory(int id);
+    Task DeleteCategoryAsync(int id);
 }

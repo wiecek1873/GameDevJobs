@@ -14,23 +14,23 @@ public class CategoriesRepository : ICategoriesRepository
     }
 
     //todo Should i use ICollection<Category> or List<Category> in this case?
-    public async Task<ICollection<Category>?> GetCategories()
+    public async Task<ICollection<Category>?> GetCategoriesAsync()
     {
         return await _gameDevJobsContext.Categories.ToListAsync();
     }
 
     //todo Should this be marked as nullable?
-    public async Task<Category?> GetCategory(int id)
+    public async Task<Category?> GetCategoryAsync(int id)
     {
         return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
     }
 
-    public async Task<Category?> GetCategory(string name)
+    public async Task<Category?> GetCategoryAsync(string name)
     {
         return await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Name == name);
     }
 
-    public async Task<Category?> CreateCategory(Category newCategory)
+    public async Task<Category?> CreateCategoryAsync(Category newCategory)
     {
         await _gameDevJobsContext.Categories.AddAsync(newCategory); //todo Should I use AddAsync() or Add()?
         await _gameDevJobsContext.SaveChangesAsync();
@@ -38,7 +38,7 @@ public class CategoriesRepository : ICategoriesRepository
         return newCategory;
     }
 
-    public async Task UpdateCategory(int id, Category updatedCategory)
+    public async Task UpdateCategoryAsync(int id, Category updatedCategory)
     {
         var categoryToUpdate = await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
 
@@ -48,7 +48,7 @@ public class CategoriesRepository : ICategoriesRepository
         await _gameDevJobsContext.SaveChangesAsync();
     }
 
-    public async Task DeleteCategory(int id)
+    public async Task DeleteCategoryAsync(int id)
     {
         var categoryToDelete = await _gameDevJobsContext.Categories.SingleOrDefaultAsync(c => c.Id == id);
 

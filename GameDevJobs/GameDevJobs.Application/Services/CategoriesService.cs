@@ -18,55 +18,65 @@ public class CategoriesService : ICategoriesService
         _mapper = mapper;
     }
 
-    public async Task<List<CategoryDto>> GetCategories()
+    public async Task<ICollection<CategoryDto>> GetCategoriesAsync()
     {
-        var categories = await _categoriesRepository.GetCategories();
+        var categories = await _categoriesRepository.GetCategoriesAsync();
 
-        return _mapper.Map<List<CategoryDto>>(categories);
+        return _mapper.Map<ICollection<CategoryDto>>(categories);
     }
-     
-    public async Task<CategoryDto> GetCategory(int categoryId)
+
+    public async Task<CategoryDto> GetCategoryAsync(int categoryId)
     {
-        var category = await _categoriesRepository.GetCategory(categoryId);
+        var category = await _categoriesRepository.GetCategoryAsync(categoryId);
 
         //todo Should I handle this case or just throw null and don't care?
-        if (category == null) 
-            throw new NotFoundException("Category with this id does not exist."); 
+        if (category == null)
+            throw new NotFoundException("Category with this id does not exist.");
 
         return _mapper.Map<CategoryDto>(category);
     }
 
-    public async Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto)
+    public async Task<CategoryDto> GetCategoryAsync(string name)
     {
-        if( await _categoriesRepository.GetCategory(newCategoryDto.Name) != null)
+        var category = await _categoriesRepository.GetCategoryAsync(name);
+
+        if (category == null)
+            throw new NotFoundException("Category with this id does not exist.");
+
+        return _mapper.Map<CategoryDto>(category);
+    }
+
+    public async Task<CategoryDto> CreateCategoryAsync(RequestCategoryDto newCategoryDto)
+    {
+        if (await _categoriesRepository.GetCategoryAsync(newCategoryDto.Name) != null)
             throw new ConflictException("Category with this name already exist");
 
         var newCategory = _mapper.Map<Category>(newCategoryDto);
 
-        await _categoriesRepository.CreateCategory(newCategory);
+        await _categoriesRepository.CreateCategoryAsync(newCategory);
 
         return _mapper.Map<CategoryDto>(newCategory);
     }
 
-    public async Task UpdateCategory(int categoryId, RequestCategoryDto updatedCategoryDto)
+    public async Task UpdateCategoryAsync(int categoryId, RequestCategoryDto updatedCategoryDto)
     {
-        var categoryToUpdate = await _categoriesRepository.GetCategory(categoryId);
+        var categoryToUpdate = await _categoriesRepository.GetCategoryAsync(categoryId);
 
         if (categoryToUpdate == null)
             throw new NotFoundException("Category with this id does not exist.");
 
         categoryToUpdate = _mapper.Map<Category>(updatedCategoryDto);
 
-        await _categoriesRepository.UpdateCategory(categoryId, categoryToUpdate);
+        await _categoriesRepository.UpdateCategoryAsync(categoryId, categoryToUpdate);
     }
 
-    public async Task DeleteCategory(int categoryId)
+    public async Task DeleteCategoryAsync(int categoryId)
     {
-        var categoryToDelete = await _categoriesRepository.GetCategory(categoryId);
+        var categoryToDelete = await _categoriesRepository.GetCategoryAsync(categoryId);
 
         if (categoryToDelete == null)
             throw new NotFoundException("Category with this id does not exist.");
 
-        await _categoriesRepository.DeleteCategory(categoryId);
+        await _categoriesRepository.DeleteCategoryAsync(categoryId);
     }
 }

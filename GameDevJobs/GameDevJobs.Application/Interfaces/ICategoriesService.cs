@@ -4,13 +4,15 @@ namespace GameDevJobs.Application.Interfaces;
 
 public interface ICategoriesService
 {
-    Task<List<CategoryDto>> GetCategories();
+    Task<ICollection<CategoryDto>> GetCategoriesAsync();
 
-    Task<CategoryDto> GetCategory(int categoryId);
+    Task<CategoryDto> GetCategoryAsync(int categoryId);
 
-    Task<CategoryDto> CreateCategory(RequestCategoryDto newCategoryDto);
+    Task<CategoryDto> GetCategoryAsync(string name);
 
-    Task UpdateCategory(int categoryId, RequestCategoryDto updatedCategoryDto);
+    Task<CategoryDto> CreateCategoryAsync(RequestCategoryDto newCategoryDto);
 
-    Task DeleteCategory(int categoryId);
+    Task UpdateCategoryAsync(int categoryId, RequestCategoryDto updatedCategoryDto);
+
+    Task DeleteCategoryAsync(int categoryId);
 }
