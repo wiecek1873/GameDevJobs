@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GameDevJobs.Application.Dto.Categories;
 using GameDevJobs.Application.Dto.Locations;
+using GameDevJobs.Application.Dto.Seniorities;
 using GameDevJobs.Domain.Entities;
 
 namespace GameDevJobs.Application.Mappings;
@@ -15,5 +16,9 @@ public class AutoMapperProfile : Profile
         CreateMap<Location, LocationDto>();
         CreateMap<LocationDto, Location>();
         CreateMap<RequestLocationDto, Location>();
+
+        CreateMap<Seniority, SeniorityDto>();
+        CreateMap<SeniorityDto, Seniority>();
+        CreateMap<RequestSeniorityDto, Seniority>();
     }
 }
