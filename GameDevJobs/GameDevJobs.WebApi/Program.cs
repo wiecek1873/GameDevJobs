@@ -15,6 +15,8 @@ builder.Services.AddControllers();
 //SETUP DI
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+builder.Services.AddScoped<ILocationsRepository, LocationsRepository>();
+builder.Services.AddScoped<ILocationsService, LocationsService>();
 
 //SETUP Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

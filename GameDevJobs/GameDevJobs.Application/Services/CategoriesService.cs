@@ -52,8 +52,7 @@ public class CategoriesService : ICategoriesService
             throw new ConflictException("Category with this name already exist");
 
         var newCategory = _mapper.Map<Category>(newCategoryDto);
-
-        await _categoriesRepository.CreateCategoryAsync(newCategory);
+        newCategory = await _categoriesRepository.CreateCategoryAsync(newCategory);
 
         return _mapper.Map<CategoryDto>(newCategory);
     }

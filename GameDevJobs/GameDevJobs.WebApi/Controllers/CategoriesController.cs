@@ -20,7 +20,6 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    [SwaggerOperation(Summary = "Get all categories")]
     public async Task<IActionResult> GetCategories()
     {
         var categories = await _categoriesService.GetCategoriesAsync();
@@ -29,7 +28,6 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet("{categoryId}")]
-    [SwaggerOperation(Summary = "Get category by Id")]
     public async Task<IActionResult> GetCategory(int categoryId)
     {
         var category = await _categoriesService.GetCategoryAsync(categoryId);
@@ -38,7 +36,6 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    [SwaggerOperation(Summary = "Add a new category")]
     public async Task<IActionResult> CreateCategory([FromBody] RequestCategoryDto requestCategoryDto)
     {
         var newCategory = await _categoriesService.CreateCategoryAsync(requestCategoryDto);
@@ -47,7 +44,6 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{categoryId}")]
-    [SwaggerOperation(Summary = "Update a selected category by id")]
     public async Task<IActionResult> UpdateCategory([FromRoute] int categoryId, [FromBody] RequestCategoryDto updatedCategoryDto)
     {
         await _categoriesService.UpdateCategoryAsync(categoryId, updatedCategoryDto);
@@ -55,8 +51,7 @@ public class CategoriesController : ControllerBase
         return NoContent(); //todo Is this response ok?
     }
 
-    [HttpDelete("categoryId")]
-    [SwaggerOperation(Summary = "Delete category")]
+    [HttpDelete("{categoryId}")]
     public async Task<IActionResult> DeleteCategory(int categoryId)
     {
         await _categoriesService.DeleteCategoryAsync(categoryId);
