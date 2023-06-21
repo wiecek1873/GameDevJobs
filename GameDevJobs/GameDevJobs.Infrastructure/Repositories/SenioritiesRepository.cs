@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Infrastructure.Repositories;
 
-public class SeniorityRepository : ISeniorityRepository
+public class SenioritiesRepository : ISenioritiesRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;
 
-    public SeniorityRepository(GameDevJobsContext gameDevJobsContext)
+    public SenioritiesRepository(GameDevJobsContext gameDevJobsContext)
     {
         _gameDevJobsContext = gameDevJobsContext;
     }

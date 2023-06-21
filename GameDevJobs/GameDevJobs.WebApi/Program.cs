@@ -18,8 +18,8 @@ builder.Services.AddScoped<ICategoriesService, CategoriesService>();
 builder.Services.AddScoped<ILocationsRepository, LocationsRepository>();
 builder.Services.AddScoped<ILocationsService, LocationsService>();
 
-builder.Services.AddScoped<ISeniorityRepository, SeniorityRepository>();
-builder.Services.AddScoped<ISeniorityService, SeniorityService>();
+builder.Services.AddScoped<ISenioritiesRepository, SenioritiesRepository>();
+builder.Services.AddScoped<ISenioritiesService, SenioritiesService>();
 
 //SETUP Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

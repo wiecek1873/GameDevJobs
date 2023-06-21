@@ -2,7 +2,7 @@
 
 namespace GameDevJobs.Application.Interfaces;
 
-public interface ISeniorityService
+public interface ISenioritiesService
 {
     Task<ICollection<SeniorityDto>> GetSeniorityAsync();
     Task<SeniorityDto> GetSeniorityAsync(int id);

@@ -11,9 +11,9 @@ namespace GameDevJobs.WebApi.Controllers;
 [Route("api/[controller]")]
 public class SenioritiesController : ControllerBase
 {
-    private readonly ISeniorityService _seniorityService;
+    private readonly ISenioritiesService _seniorityService;
 
-    public SenioritiesController(ISeniorityService seniorityService)
+    public SenioritiesController(ISenioritiesService seniorityService)
     {
         _seniorityService = seniorityService;
     }

@@ -1,7 +1,7 @@
 ﻿using GameDevJobs.Domain.Entities;
 namespace GameDevJobs.Domain.Interfaces;
 
-public interface ISeniorityRepository
+public interface ISenioritiesRepository
 {
     Task<ICollection<Seniority>?> GetSenioritiesAsync();
     Task<Seniority?> GetSeniorityAsync(int id);
