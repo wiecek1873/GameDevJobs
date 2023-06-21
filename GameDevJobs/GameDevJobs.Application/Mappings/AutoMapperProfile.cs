@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GameDevJobs.Application.Dto.Categories;
+using GameDevJobs.Application.Dto.Companies;
 using GameDevJobs.Application.Dto.Locations;
 using GameDevJobs.Application.Dto.Seniorities;
 using GameDevJobs.Application.Dto.WorkingTimes;
@@ -25,5 +26,9 @@ public class AutoMapperProfile : Profile
         CreateMap<WorkingTime, WorkingTimeDto>();
         CreateMap<WorkingTimeDto, WorkingTime>();
         CreateMap<RequestWorkingTimeDto, WorkingTime>();
+
+        CreateMap<Company, CompanyDto>();
+        CreateMap<CompanyDto, Company>();
+        CreateMap<RequestCompanyDto, Company>();
     }
 }
