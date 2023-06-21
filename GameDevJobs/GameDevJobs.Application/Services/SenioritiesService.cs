@@ -51,9 +51,7 @@ public class SenioritiesService : ISenioritiesService
 
     public async Task UpdateSeniorityAsync(int id, RequestSeniorityDto updatedSeniorityDto)
     {
-        var seniorityToUpdate = await _senioritiesRepository.GetSeniorityAsync(id);
-
-        if (seniorityToUpdate == null)
+        if (await _senioritiesRepository.GetSeniorityAsync(id) == null)
             throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         var updatedSeniority = _mapper.Map<Seniority>(updatedSeniorityDto);

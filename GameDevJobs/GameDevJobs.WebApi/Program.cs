@@ -21,6 +21,9 @@ builder.Services.AddScoped<ILocationsService, LocationsService>();
 builder.Services.AddScoped<ISenioritiesRepository, SenioritiesRepository>();
 builder.Services.AddScoped<ISenioritiesService, SenioritiesService>();
 
+builder.Services.AddScoped<IWorkingTimesRepository, WorkingTimesRepository>();
+builder.Services.AddScoped<IWorkingTimesService, WorkingTimesService>();
+
 //SETUP Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

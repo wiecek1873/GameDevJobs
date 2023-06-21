@@ -2,6 +2,7 @@
 using GameDevJobs.Application.Dto.Categories;
 using GameDevJobs.Application.Dto.Locations;
 using GameDevJobs.Application.Dto.Seniorities;
+using GameDevJobs.Application.Dto.WorkingTimes;
 using GameDevJobs.Domain.Entities;
 
 namespace GameDevJobs.Application.Mappings;
@@ -20,5 +21,9 @@ public class AutoMapperProfile : Profile
         CreateMap<Seniority, SeniorityDto>();
         CreateMap<SeniorityDto, Seniority>();
         CreateMap<RequestSeniorityDto, Seniority>();
+
+        CreateMap<WorkingTime, WorkingTimeDto>();
+        CreateMap<WorkingTimeDto, WorkingTime>();
+        CreateMap<RequestWorkingTimeDto, WorkingTime>();
     }
 }
