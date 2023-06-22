@@ -2,6 +2,7 @@
 using GameDevJobs.Application.Dto.Categories;
 using GameDevJobs.Application.Dto.Companies;
 using GameDevJobs.Application.Dto.Locations;
+using GameDevJobs.Application.Dto.Offers;
 using GameDevJobs.Application.Dto.Seniorities;
 using GameDevJobs.Application.Dto.WorkingTimes;
 using GameDevJobs.Domain.Entities;
@@ -30,5 +31,9 @@ public class AutoMapperProfile : Profile
         CreateMap<Company, CompanyDto>();
         CreateMap<CompanyDto, Company>();
         CreateMap<RequestCompanyDto, Company>();
+
+        CreateMap<Offer, OfferDto>();
+        CreateMap<OfferDto, Offer>();
+        CreateMap<RequestOfferDto, Offer>();
     }
 }

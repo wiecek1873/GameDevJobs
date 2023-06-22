@@ -2,7 +2,6 @@
 using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Npgsql.Internal.TypeHandlers;
 
 namespace GameDevJobs.Infrastructure.Repositories;
 
@@ -59,7 +58,7 @@ public class OffersRepository : IOffersRepository
     {
         var offerToDelete = await _gameDevJobsContext.Offers.SingleOrDefaultAsync(o => o.Id ==id);
 
-        if(offerToDelete == null) 
+        if (offerToDelete == null)
             return;
 
         _gameDevJobsContext.Remove(offerToDelete);

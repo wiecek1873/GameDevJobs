@@ -5,11 +5,12 @@ using GameDevJobs.Data;
 using GameDevJobs.Domain.Interfaces;
 using GameDevJobs.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 //SETUP DI
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
@@ -28,6 +29,7 @@ builder.Services.AddScoped<ICompaniesRepository, CompaniesRepository>();
 builder.Services.AddScoped<ICompaniesService, CompaniesService>();
 
 builder.Services.AddScoped<IOffersRepository, OffersRepository>();
+builder.Services.AddScoped<IOffersService, OffersService>();
 
 //SETUP Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
