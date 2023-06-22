@@ -27,6 +27,8 @@ builder.Services.AddScoped<IWorkingTimesService, WorkingTimesService>();
 builder.Services.AddScoped<ICompaniesRepository, CompaniesRepository>();
 builder.Services.AddScoped<ICompaniesService, CompaniesService>();
 
+builder.Services.AddScoped<IOffersRepository, OffersRepository>();
+
 //SETUP Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
