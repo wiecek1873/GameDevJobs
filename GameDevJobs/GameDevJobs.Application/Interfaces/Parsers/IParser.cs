@@ -1,6 +1,8 @@
-﻿namespace GameDevJobs.Application.Interfaces.Parsers;
+﻿using GameDevJobs.Application.Dto.Offers;
 
-public interface IParser
+namespace GameDevJobs.Application.Interfaces.Parsers;
+
+public interface IParser<T>
 {
-    Task<string> Parse(string input);
+    T Parse(string html);
 }

@@ -1,4 +1,5 @@
-﻿using GameDevJobs.Application.Interfaces.Scrapers;
+﻿using GameDevJobs.Application.Dto.Companies;
+using GameDevJobs.Application.Interfaces.Scrapers;
 
 namespace GameDevJobs.Application.Scrapers;
 
