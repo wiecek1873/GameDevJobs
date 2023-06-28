@@ -9,6 +9,9 @@ namespace GameDevJobs.Application.Services;
 
 public class CategoriesService : ICategoriesService
 {
+    private const string NOT_FOUND_MESSAGE = "Category with this id does not exist";
+    private const string CONFLICT_MESSAGE = "Category with this name already exist";
+
     private readonly ICategoriesRepository _categoriesRepository;
     private readonly IMapper _mapper;
 
@@ -31,7 +34,7 @@ public class CategoriesService : ICategoriesService
 
         //todo Should I handle this case or just throw null and don't care?
         if (category == null)
-            throw new NotFoundException("Category with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         return _mapper.Map<CategoryDto>(category);
     }
@@ -41,7 +44,7 @@ public class CategoriesService : ICategoriesService
         var category = await _categoriesRepository.GetCategoryAsync(name);
 
         if (category == null)
-            throw new NotFoundException("Category with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         return _mapper.Map<CategoryDto>(category);
     }
@@ -49,7 +52,7 @@ public class CategoriesService : ICategoriesService
     public async Task<CategoryDto> CreateCategoryAsync(RequestCategoryDto newCategoryDto)
     {
         if (await _categoriesRepository.GetCategoryAsync(newCategoryDto.Name) != null)
-            throw new ConflictException("Category with this name already exist");
+            throw new ConflictException(CONFLICT_MESSAGE);
 
         var newCategory = _mapper.Map<Category>(newCategoryDto);
         newCategory = await _categoriesRepository.CreateCategoryAsync(newCategory);
@@ -62,7 +65,7 @@ public class CategoriesService : ICategoriesService
         var categoryToUpdate = await _categoriesRepository.GetCategoryAsync(categoryId);
 
         if (categoryToUpdate == null)
-            throw new NotFoundException("Category with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         categoryToUpdate = _mapper.Map<Category>(updatedCategoryDto);
 
@@ -74,7 +77,7 @@ public class CategoriesService : ICategoriesService
         var categoryToDelete = await _categoriesRepository.GetCategoryAsync(categoryId);
 
         if (categoryToDelete == null)
-            throw new NotFoundException("Category with this id does not exist.");
+            throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         await _categoriesRepository.DeleteCategoryAsync(categoryId);
     }
