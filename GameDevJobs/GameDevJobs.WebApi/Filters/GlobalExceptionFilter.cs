@@ -15,11 +15,11 @@ public class GlobalExceptionFilter : ExceptionFilterAttribute
         response.StatusCode = 500;
         response.ContentType = "text/plain";
 
-        //if (context.Exception is BadRequestException)
-        //{
-        //    response.Content = context.Exception.Message;
-        //    response.StatusCode = 400;
-        //}
+        if (context.Exception is BadRequestException)
+        {
+            response.Content = context.Exception.Message;
+            response.StatusCode = 400;
+        }
         //if (context.Exception is UnauthorizedException)
         //{
         //    response.Content = context.Exception.Message;
