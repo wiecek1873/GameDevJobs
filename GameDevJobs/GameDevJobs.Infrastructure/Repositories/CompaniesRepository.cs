@@ -23,6 +23,11 @@ public class CompaniesRepository : ICompaniesRepository
         return await _gameDevJobsContext.Companies.SingleOrDefaultAsync(c => c.Id == id);
     }
 
+    public async Task<Company?> GetCompanyAsync(string name)
+    {
+        return await _gameDevJobsContext.Companies.SingleOrDefaultAsync(c => c.Name == name);
+    }
+
     public async Task<Company?> CreateCompanyAsync(Company company)
     {
         await _gameDevJobsContext.Companies.AddAsync(company);
