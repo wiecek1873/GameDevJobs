@@ -1,6 +1,6 @@
 ﻿using GameDevJobs.Application.Dto.Locations;
 using GameDevJobs.Application.Dto.Seniorities;
-using GameDevJobs.Application.Interfaces;
+using GameDevJobs.Application.Interfaces.Services;
 using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,5 +1,5 @@
 ﻿using GameDevJobs.Application.Dto.Offers;
-using GameDevJobs.Application.Interfaces;
+using GameDevJobs.Application.Interfaces.Services;
 using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 

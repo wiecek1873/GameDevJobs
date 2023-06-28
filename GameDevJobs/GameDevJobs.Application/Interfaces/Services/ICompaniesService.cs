@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDevJobs.Application.Interfaces;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface ICompaniesService
 {
     Task<ICollection<CompanyDto>> GetCompaniesAsync();

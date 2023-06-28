@@ -1,7 +1,7 @@
 ﻿using GameDevJobs.Application.Dto.Categories;
 using GameDevJobs.Application.Dto.Locations;
 
-namespace GameDevJobs.Application.Interfaces;
+namespace GameDevJobs.Application.Interfaces.Services;
 
 public interface ILocationsService
 {

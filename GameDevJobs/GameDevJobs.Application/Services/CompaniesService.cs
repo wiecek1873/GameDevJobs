@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GameDevJobs.Application.Dto.Companies;
 using GameDevJobs.Application.Exceptions;
-using GameDevJobs.Application.Interfaces;
+using GameDevJobs.Application.Interfaces.Services;
 using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 

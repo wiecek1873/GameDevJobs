@@ -1,5 +1,6 @@
 using AutoMapper;
-using GameDevJobs.Application.Interfaces;
+using GameDevJobs.Application.Interfaces.Services;
+using GameDevJobs.Application.Scrapers;
 using GameDevJobs.Application.Services;
 using GameDevJobs.Data;
 using GameDevJobs.Domain.Interfaces;
@@ -57,5 +58,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+var httpClient = new HttpClient();
+var scraper = new SkillshotScraper(httpClient);
+var xd = await scraper.CallUrlAsync("https://www.skillshot.pl/jobs/32104");
 
 app.Run();

@@ -1,6 +1,6 @@
 ﻿using GameDevJobs.Application.Dto.Offers;
 
-namespace GameDevJobs.Application.Interfaces;
+namespace GameDevJobs.Application.Interfaces.Services;
 
 public interface IOffersService
 {
