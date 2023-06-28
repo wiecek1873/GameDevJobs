@@ -34,6 +34,5 @@ public class AutoMapperProfile : Profile
 
         CreateMap<Offer, OfferDto>();
         CreateMap<OfferDto, Offer>();
-        CreateMap<RequestOfferDto, Offer>();
     }
 }
