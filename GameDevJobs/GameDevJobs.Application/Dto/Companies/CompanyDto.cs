@@ -9,6 +9,4 @@ public class CompanyDto
     public string? Description { get; set; }
 
     public string? Website { get; set; }
-
-    public string Link { get; set; } = null!;
 }

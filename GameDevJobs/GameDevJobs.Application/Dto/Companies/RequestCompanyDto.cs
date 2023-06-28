@@ -10,7 +10,4 @@ public class RequestCompanyDto
     public string? Description { get; set; }
 
     public string? Website { get; set; }
-
-    [Required(ErrorMessage = "Comapny link is required")]
-    public string Link { get; set; } = null!;
 }
