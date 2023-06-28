@@ -41,7 +41,6 @@ public class CompaniesRepository : ICompaniesRepository
         companyToUpdate.Name = updatedCompany.Name;
         companyToUpdate.Description = updatedCompany.Description;
         companyToUpdate.Website = updatedCompany.Website;
-        companyToUpdate.Link = updatedCompany.Link;
 
         await _gameDevJobsContext.SaveChangesAsync();
     }
