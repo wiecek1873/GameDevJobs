@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameDevJobs.Application.Dto.WorkingTimes;
+namespace Backend.Application.Dto.WorkingTimes;
 public class RequestWorkingTimeDto
 {
     [Required(ErrorMessage = "Location name is required")]

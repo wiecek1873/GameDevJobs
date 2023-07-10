@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using GameDevJobs.Application.Dto.Locations;
-using GameDevJobs.Application.Exceptions;
-using GameDevJobs.Application.Interfaces.Services;
-using GameDevJobs.Domain.Entities;
-using GameDevJobs.Domain.Interfaces;
+using Backend.Application.Dto.Locations;
+using Backend.Application.Interfaces.Services;
+using Backend.Domain.Entities;
+using Backend.Domain.Interfaces;
+using Backend.Application.Exceptions;
 
-namespace GameDevJobs.Application.Services;
+namespace Backend.Application.Services;
 public class LocationsService : ILocationsService
 {
     private const string NOT_FOUND_MESSAGE = "Location with this id does not exist.";

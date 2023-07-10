@@ -1,4 +1,4 @@
-﻿namespace GameDevJobs.Application.Dto.Companies;
+﻿namespace Backend.Application.Dto.Companies;
 
 public class CompanyDto
 {

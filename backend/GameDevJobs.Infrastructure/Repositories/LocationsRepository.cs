@@ -1,9 +1,9 @@
-﻿using GameDevJobs.Data;
-using GameDevJobs.Domain.Entities;
-using GameDevJobs.Domain.Interfaces;
+﻿using Backend.Domain.Entities;
+using Backend.Domain.Interfaces;
+using Backend.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameDevJobs.Infrastructure.Repositories;
+namespace Backend.Infrastructure.Repositories;
 public class LocationsRepository : ILocationsRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;

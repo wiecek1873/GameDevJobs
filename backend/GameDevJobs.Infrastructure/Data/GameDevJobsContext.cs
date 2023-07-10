@@ -1,7 +1,7 @@
-﻿using GameDevJobs.Domain.Entities;
+﻿using Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameDevJobs.Data;
+namespace Backend.Infrastructure.Data;
 public class GameDevJobsContext : DbContext
 {
     public DbSet<Offer> Offers { get; set; } = null!;

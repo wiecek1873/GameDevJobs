@@ -1,6 +1,6 @@
-﻿using GameDevJobs.Domain.Entities;
+﻿using Backend.Domain.Entities;
 
-namespace GameDevJobs.Domain.Interfaces;
+namespace Backend.Domain.Interfaces;
 public interface ICategoriesRepository
 {
     Task<ICollection<Category>?> GetCategoriesAsync();

@@ -1,4 +1,4 @@
-﻿namespace GameDevJobs.Application.Dto.Categories;
+﻿namespace Backend.Application.Dto.Categories;
 public class CategoryDto
 {
     public int Id { get; set; }

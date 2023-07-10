@@ -1,11 +1,11 @@
-﻿using GameDevJobs.Application.Dto.Locations;
-using GameDevJobs.Application.Dto.Seniorities;
-using GameDevJobs.Application.Dto.WorkingTimes;
-using GameDevJobs.Application.Interfaces.Services;
-using GameDevJobs.WebApi.Filters;
+﻿using Backend.Application.Dto.WorkingTimes;
+using Backend.Application.Interfaces.Services;
+using Backend.Application.Dto.Locations;
+using Backend.Application.Dto.Seniorities;
+using Backend.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameDevJobs.WebApi.Controllers;
+namespace Backend.WebApi.Controllers;
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]

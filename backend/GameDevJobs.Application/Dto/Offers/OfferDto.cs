@@ -1,4 +1,4 @@
-﻿namespace GameDevJobs.Application.Dto.Offers;
+﻿namespace Backend.Application.Dto.Offers;
 
 public class OfferDto
 {

@@ -1,10 +1,10 @@
-﻿using GameDevJobs.Application.Dto.Categories;
-using GameDevJobs.Application.Interfaces.Services;
-using GameDevJobs.WebApi.Filters;
+﻿using Backend.Application.Dto.Categories;
+using Backend.Application.Interfaces.Services;
+using Backend.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace GameDevJobs.WebApi.Controllers;
+namespace Backend.WebApi.Controllers;
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]

@@ -1,6 +1,6 @@
-﻿using GameDevJobs.Application.Dto.Seniorities;
+﻿using Backend.Application.Dto.Seniorities;
 
-namespace GameDevJobs.Application.Interfaces.Services;
+namespace Backend.Application.Interfaces.Services;
 public interface ISenioritiesService
 {
     Task<ICollection<SeniorityDto>> GetSeniorityAsync();

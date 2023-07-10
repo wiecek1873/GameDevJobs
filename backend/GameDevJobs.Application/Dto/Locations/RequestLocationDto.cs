@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameDevJobs.Application.Dto.Locations;
+namespace Backend.Application.Dto.Locations;
 public class RequestLocationDto
 {
     [Required(ErrorMessage = "Location name is required")]
