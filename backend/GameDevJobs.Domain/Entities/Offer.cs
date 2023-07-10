@@ -5,6 +5,7 @@ public class Offer
 {
     public int Id { get; set; }
     public string Title { get; set; } = null!;
+    public string Description { get; set; } = null!;
     public int CompanyId { get; set; }
     [ForeignKey("CompanyId")]
     public virtual Company Company { get; set; } = null!;
