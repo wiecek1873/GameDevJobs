@@ -1,11 +1,11 @@
-﻿using Backend.Application.Dto.Companies;
+﻿using GameDevJobs.Application.Dto.Companies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Application.Interfaces.Services;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface ICompaniesService
 {
     Task<ICollection<CompanyDto>> GetCompaniesAsync();

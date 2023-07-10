@@ -1,7 +1,7 @@
-﻿using Backend.Application.Dto.Locations;
-using GameDevJobs.Application.Dto.Categories;
+﻿using GameDevJobs.Application.Dto.Categories;
+using GameDevJobs.Application.Dto.Locations;
 
-namespace Backend.Application.Interfaces.Services;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface ILocationsService
 {
     Task<ICollection<LocationDto>> GetLocationsAsync();

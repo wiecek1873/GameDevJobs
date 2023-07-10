@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Backend.Application.Dto.Categories;
-using Backend.Application.Dto.Companies;
-using Backend.Application.Dto.Locations;
-using Backend.Application.Dto.Offers;
-using Backend.Application.Dto.Seniorities;
-using Backend.Application.Dto.WorkingTimes;
-using Backend.Domain.Entities;
+using GameDevJobs.Application.Dto.Categories;
+using GameDevJobs.Application.Dto.Companies;
+using GameDevJobs.Application.Dto.Locations;
+using GameDevJobs.Application.Dto.Offers;
+using GameDevJobs.Application.Dto.Seniorities;
+using GameDevJobs.Application.Dto.WorkingTimes;
+using GameDevJobs.Domain.Entities;
 
-namespace Backend.Application.Mappings;
+namespace GameDevJobs.Application.Mappings;
 public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()

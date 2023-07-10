@@ -1,6 +1,6 @@
-﻿using Backend.Application.Dto.WorkingTimes;
+﻿using GameDevJobs.Application.Dto.WorkingTimes;
 
-namespace Backend.Application.Interfaces.Services;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface IWorkingTimesService
 {
     Task<ICollection<WorkingTimeDto>> GetWorkingTimesAsync();

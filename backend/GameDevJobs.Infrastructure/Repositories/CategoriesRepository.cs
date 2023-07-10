@@ -1,9 +1,9 @@
-﻿using Backend.Domain.Entities;
-using Backend.Domain.Interfaces;
-using Backend.Infrastructure.Data;
+﻿using GameDevJobs.Data;
+using GameDevJobs.Domain.Entities;
+using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Infrastructure.Repositories;
+namespace GameDevJobs.Infrastructure.Repositories;
 public class CategoriesRepository : ICategoriesRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;

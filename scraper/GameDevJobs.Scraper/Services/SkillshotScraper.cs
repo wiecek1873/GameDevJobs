@@ -1,7 +1,7 @@
 ﻿using GameDevJobs.Application.Dto.Companies;
-using Scraper.WebApi.Interfaces;
+using GameDevJobs.Scraper.Interfaces;
 
-namespace Scraper.WebApi.Services;
+namespace GameDevJobs.Application.Scrapers;
 public class SkillshotScraper : IScraperService
 {
     private readonly HttpClient _httpClient;

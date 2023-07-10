@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Backend.Application.Dto.Categories;
+namespace GameDevJobs.Application.Dto.Categories;
 public class RequestCategoryDto
 {
     [Required(ErrorMessage = "Category name is required")]

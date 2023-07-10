@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameDevJobs.Application\Backend.Application.csproj" />
+    <ProjectReference Include="..\GameDevJobs.Application\GameDevJobs.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace Backend.Domain.Entities;
+﻿namespace GameDevJobs.Domain.Entities;
 
 public class Location
 {

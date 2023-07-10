@@ -1,4 +1,4 @@
-namespace Backend.WebApi;
+namespace GameDevJobs;
 
 public class WeatherForecast
 {

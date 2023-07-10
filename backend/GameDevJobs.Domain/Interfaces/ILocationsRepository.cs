@@ -1,6 +1,6 @@
-﻿using Backend.Domain.Entities;
+﻿using GameDevJobs.Domain.Entities;
 
-namespace Backend.Domain.Interfaces;
+namespace GameDevJobs.Domain.Interfaces;
 public interface ILocationsRepository
 {
     Task<ICollection<Location>?> GetLocationsAsync();

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Backend.Application.Dto.Seniorities;
-using Backend.Application.Interfaces.Services;
-using Backend.Domain.Entities;
-using Backend.Domain.Interfaces;
+using GameDevJobs.Application.Dto.Seniorities;
 using GameDevJobs.Application.Exceptions;
+using GameDevJobs.Application.Interfaces.Services;
+using GameDevJobs.Domain.Entities;
+using GameDevJobs.Domain.Interfaces;
 
-namespace Backend.Application.Services;
+namespace GameDevJobs.Application.Services;
 public class SenioritiesService : ISenioritiesService
 {
     private const string NOT_FOUND_MESSAGE = "Seniority with this id does not exist.";

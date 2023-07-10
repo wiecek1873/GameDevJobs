@@ -1,8 +1,8 @@
-using Backend.Application.Interfaces.Services;
-using Backend.Application.Services;
-using Backend.Domain.Interfaces;
-using Backend.Infrastructure.Data;
-using Backend.Infrastructure.Repositories;
+using GameDevJobs.Application.Interfaces.Services;
+using GameDevJobs.Application.Services;
+using GameDevJobs.Data;
+using GameDevJobs.Domain.Interfaces;
+using GameDevJobs.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 

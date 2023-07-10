@@ -1,4 +1,4 @@
-﻿namespace Backend.Application.Dto.Locations;
+﻿namespace GameDevJobs.Application.Dto.Locations;
 public class LocationDto
 {
     public int Id { get; set; }

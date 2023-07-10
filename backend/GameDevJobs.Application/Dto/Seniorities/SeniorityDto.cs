@@ -1,4 +1,4 @@
-﻿namespace Backend.Application.Dto.Seniorities;
+﻿namespace GameDevJobs.Application.Dto.Seniorities;
 
 public class SeniorityDto
 {

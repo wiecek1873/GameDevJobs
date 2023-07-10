@@ -1,4 +1,4 @@
-﻿namespace Backend.Application.Exceptions;
+﻿namespace GameDevJobs.Application.Exceptions;
 
 public class NotFoundException : Exception
 {

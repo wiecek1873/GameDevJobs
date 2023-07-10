@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Backend.Application.Dto.Categories;
-using Backend.Application.Interfaces.Services;
-using Backend.Domain.Entities;
-using Backend.Domain.Interfaces;
+using GameDevJobs.Application.Dto.Categories;
 using GameDevJobs.Application.Exceptions;
+using GameDevJobs.Application.Interfaces.Services;
+using GameDevJobs.Domain.Entities;
+using GameDevJobs.Domain.Interfaces;
 
-namespace Backend.Application.Services;
+namespace GameDevJobs.Application.Services;
 public class CategoriesService : ICategoriesService
 {
     private const string NOT_FOUND_MESSAGE = "Category with this id does not exist";

@@ -1,6 +1,6 @@
-﻿using Backend.Application.Dto.Offers;
+﻿using GameDevJobs.Application.Dto.Offers;
 
-namespace Backend.Application.Interfaces.Services;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface IOffersService
 {
     Task<ICollection<OfferDto>> GetOffersAsync();

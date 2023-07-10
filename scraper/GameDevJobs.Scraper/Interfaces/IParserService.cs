@@ -1,4 +1,4 @@
-﻿namespace Scraper.WebApi.Interfaces;
+﻿namespace GameDevJobs.Scraper.Interfaces;
 
 public interface IParserService<T>
 {

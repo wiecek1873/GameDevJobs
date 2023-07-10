@@ -1,7 +1,6 @@
-using Backend.WebApi;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.WebApi.Controllers;
+namespace GameDevJobs.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase

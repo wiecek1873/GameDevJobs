@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Backend.Domain.Entities;
+namespace GameDevJobs.Domain.Entities;
 public class Offer
 {
     public int Id { get; set; }

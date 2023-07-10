@@ -1,6 +1,6 @@
-﻿using Backend.Application.Dto.Categories;
+﻿using GameDevJobs.Application.Dto.Categories;
 
-namespace Backend.Application.Interfaces.Services;
+namespace GameDevJobs.Application.Interfaces.Services;
 public interface ICategoriesService
 {
     Task<ICollection<CategoryDto>> GetCategoriesAsync();

@@ -1,4 +1,5 @@
-﻿namespace Backend.Application.Dto.WorkingTimes;
+﻿
+namespace GameDevJobs.Application.Dto.WorkingTimes;
 
 public class WorkingTimeDto
 {
