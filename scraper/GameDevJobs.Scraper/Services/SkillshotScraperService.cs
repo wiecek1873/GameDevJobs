@@ -2,11 +2,11 @@
 using Scraper.WebApi.Interfaces;
 
 namespace Scraper.WebApi.Services;
-public class SkillshotScraper : IScraperService
+public class SkillshotScraperService : IScraperService
 {
     private readonly HttpClient _httpClient;
 
-    public SkillshotScraper(HttpClient httpClient)
+    public SkillshotScraperService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }

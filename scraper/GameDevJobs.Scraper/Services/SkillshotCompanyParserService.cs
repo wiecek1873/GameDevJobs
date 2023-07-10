@@ -12,25 +12,25 @@ public class SkillshotCompanyParserService : IParserService<RequestCompanyDto>
 
         var companyDto = new RequestCompanyDto
         {
-            Name = parseName(htmlDocument),
-            Description = parseDescription(htmlDocument),
-            Website = parseWebsite(htmlDocument)
+            Name = ParseName(htmlDocument),
+            Description = ParseDescription(htmlDocument),
+            Website = ParseWebsite(htmlDocument)
         };
 
         return companyDto;
     }
 
-    private string parseName(HtmlDocument htmlDocument)
+    private string ParseName(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[2]/h1[1]").InnerText.Replace("\n", string.Empty);
     }
 
-    private string? parseDescription(HtmlDocument htmlDocument)
+    private string? ParseDescription(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[2]/div/p/text()")?.InnerText;
     }
 
-    private string? parseWebsite(HtmlDocument htmlDocument)
+    private string? ParseWebsite(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[2]/p[2]/b/a")?.InnerText;
     }

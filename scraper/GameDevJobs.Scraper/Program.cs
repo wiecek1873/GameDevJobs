@@ -28,8 +28,8 @@ app.MapControllers();
 
 //todo Remove this. Only for quick testing
 var httpClient = new HttpClient();
-var scraper = new SkillshotScraper(httpClient);
-var offerParser = new SkillshotOfferParser();
+var scraper = new SkillshotScraperService(httpClient);
+var offerParser = new SkillshotOfferParserService();
 //var xd = await scraper.CallUrlAsync("https://www.skillshot.pl/users/3614");
 //var xdd = await scraper.CallUrlAsync("https://www.skillshot.pl/jobs/32100-3d-artist-at-spellarena-sp-z-o-o");
 

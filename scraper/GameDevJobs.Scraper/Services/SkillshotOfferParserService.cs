@@ -4,7 +4,7 @@ using HtmlAgilityPack;
 using Scraper.WebApi.Interfaces;
 
 namespace Scraper.WebApi.Services;
-public class SkillshotOfferParser : IParserService<RequestOfferDto>
+public class SkillshotOfferParserService : IParserService<RequestOfferDto>
 {
     public RequestOfferDto Parse(string html)
     {
@@ -13,27 +13,27 @@ public class SkillshotOfferParser : IParserService<RequestOfferDto>
 
         var companyDto = new RequestOfferDto()
         {
-            Title = parseTitle(htmlDocument),
-            CompanyName = parseCompanyName(htmlDocument),
-            LocationName = parseLocationName(htmlDocument),
-            CategoryName = parseCategoryName(htmlDocument),
-            WorkingTimeName = parseWorkingTimeName(htmlDocument),
-            SeniorityName = parseSeniorityName(htmlDocument),
-            SalaryMin = parseSalaryMin(htmlDocument),
-            SalaryMax = parseSalaryMax(htmlDocument),
-            Date = parseDate(htmlDocument),
-            Views = parseViews(htmlDocument),
+            Title = ParseTitle(htmlDocument),
+            CompanyName = ParseCompanyName(htmlDocument),
+            LocationName = ParseLocationName(htmlDocument),
+            CategoryName = ParseCategoryName(htmlDocument),
+            WorkingTimeName = ParseWorkingTimeName(htmlDocument),
+            SeniorityName = ParseSeniorityName(htmlDocument),
+            SalaryMin = ParseSalaryMin(htmlDocument),
+            SalaryMax = ParseSalaryMax(htmlDocument),
+            Date = ParseDate(htmlDocument),
+            Views = ParseViews(htmlDocument),
         };
 
         return companyDto;
     }
 
-    private string parseTitle(HtmlDocument htmlDocument)
+    private string ParseTitle(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/h1").InnerText.Replace("\n", string.Empty);
     }
 
-    private string parseCompanyName(HtmlDocument htmlDocument)
+    private string ParseCompanyName(HtmlDocument htmlDocument)
     {
         if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[1]").InnerText.Replace("\n", string.Empty);
@@ -41,7 +41,7 @@ public class SkillshotOfferParser : IParserService<RequestOfferDto>
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b/a").InnerText.Replace("\n", string.Empty);
     }
 
-    private string parseLocationName(HtmlDocument htmlDocument)
+    private string ParseLocationName(HtmlDocument htmlDocument)
     {
         if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[2]").InnerText.Replace("\n", string.Empty);
@@ -49,40 +49,40 @@ public class SkillshotOfferParser : IParserService<RequestOfferDto>
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[2]").NextSibling.InnerText;
     }
 
-    private string parseCategoryName(HtmlDocument htmlDocument)
+    private string ParseCategoryName(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[2]").InnerText.Replace("\n", string.Empty);
     }
 
-    private string parseWorkingTimeName(HtmlDocument htmlDocument)
+    private string ParseWorkingTimeName(HtmlDocument htmlDocument)
     {
         return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[1]").InnerText.Replace("\n", string.Empty);
     }
 
-    private string? parseSeniorityName(HtmlDocument htmlDocument)
+    private string? ParseSeniorityName(HtmlDocument htmlDocument)
     {
         return string.Empty;
         //return htmlDocument.DocumentNode.SelectSingleNode("")?.InnerText;
     }
 
-    private int? parseSalaryMin(HtmlDocument htmlDocument)
+    private int? ParseSalaryMin(HtmlDocument htmlDocument)
     {
         return 0;
         //return int.Parse(htmlDocument.DocumentNode.SelectSingleNode("")?.InnerText);
     }
 
-    private int? parseSalaryMax(HtmlDocument htmlDocument)
+    private int? ParseSalaryMax(HtmlDocument htmlDocument)
     {
         return 0;
         //return int.Parse(htmlDocument.DocumentNode.SelectSingleNode("")?.InnerText);
     }
 
-    private DateOnly parseDate(HtmlDocument htmlDocument)
+    private DateOnly ParseDate(HtmlDocument htmlDocument)
     {
         return DateOnly.Parse(htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[3]/strong").InnerText);
     }
 
-    private int parseViews(HtmlDocument htmlDocument)
+    private int ParseViews(HtmlDocument htmlDocument)
     {
         return int.Parse(htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[4]/strong").InnerText);
     }
