@@ -1,5 +1,4 @@
-using GameDevJobs.Application.Parsers;
-using GameDevJobs.Application.Scrapers;
+using Scraper.WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

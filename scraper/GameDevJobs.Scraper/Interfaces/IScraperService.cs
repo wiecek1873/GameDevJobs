@@ -1,4 +1,4 @@
-﻿namespace GameDevJobs.Scraper.Interfaces;
+﻿namespace Scraper.WebApi.Interfaces;
 
 public interface IScraperService
 {
