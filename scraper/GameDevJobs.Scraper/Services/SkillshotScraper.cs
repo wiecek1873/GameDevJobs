@@ -1,9 +1,9 @@
 ﻿using GameDevJobs.Application.Dto.Companies;
-using GameDevJobs.Application.Interfaces.Scrapers;
+using GameDevJobs.Scraper.Interfaces;
 
 namespace GameDevJobs.Application.Scrapers;
 
-public class SkillshotScraper : IScraper
+public class SkillshotScraper : IScraperService
 {
     private readonly HttpClient _httpClient;
 

@@ -1,10 +1,10 @@
 ﻿using GameDevJobs.Application.Dto.Companies;
-using GameDevJobs.Application.Interfaces.Parsers;
+using GameDevJobs.Scraper.Interfaces;
 using HtmlAgilityPack;
 
 namespace GameDevJobs.Application.Parsers;
 
-public class SkillshotCompanyParser : IParser<RequestCompanyDto>
+public class SkillshotCompanyParserService : IParserService<RequestCompanyDto>
 {
     public RequestCompanyDto Parse(string html)
     {
