@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using GameDevJobs.Application.Dto.Companies;
+using Backend.Application.Dto.Companies;
+using Backend.Application.Interfaces.Services;
+using Backend.Domain.Entities;
+using Backend.Domain.Interfaces;
 using GameDevJobs.Application.Exceptions;
-using GameDevJobs.Application.Interfaces.Services;
-using GameDevJobs.Domain.Entities;
-using GameDevJobs.Domain.Interfaces;
 
-namespace GameDevJobs.Application.Services;
+namespace Backend.Application.Services;
 public class CompaniesService : ICompaniesService
 {
     private const string NOT_FOUND_MESSAGE = "Company with this id does not exist.";

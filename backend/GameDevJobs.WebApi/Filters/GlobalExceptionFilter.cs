@@ -1,8 +1,8 @@
-﻿using GameDevJobs.Application.Exceptions;
+﻿using Backend.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace GameDevJobs.WebApi.Filters;
+namespace Backend.WebApi.Filters;
 //todo Find out what is do and why i use it
 public class GlobalExceptionFilter : ExceptionFilterAttribute
 {

@@ -1,8 +1,8 @@
 ﻿using GameDevJobs.Application.Dto.Companies;
-using GameDevJobs.Scraper.Interfaces;
 using HtmlAgilityPack;
+using Scraper.WebApi.Interfaces;
 
-namespace GameDevJobs.Application.Parsers;
+namespace Scraper.WebApi.Services;
 public class SkillshotCompanyParserService : IParserService<RequestCompanyDto>
 {
     public RequestCompanyDto Parse(string html)
@@ -22,7 +22,7 @@ public class SkillshotCompanyParserService : IParserService<RequestCompanyDto>
 
     private string parseName(HtmlDocument htmlDocument)
     {
-        return htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[2]/h1[1]").InnerText.Replace("\n", String.Empty);
+        return htmlDocument.DocumentNode.SelectSingleNode("/html/body/div[2]/h1[1]").InnerText.Replace("\n", string.Empty);
     }
 
     private string? parseDescription(HtmlDocument htmlDocument)

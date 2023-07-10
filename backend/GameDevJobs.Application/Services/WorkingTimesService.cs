@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using GameDevJobs.Application.Dto.WorkingTimes;
+using Backend.Application.Dto.WorkingTimes;
+using Backend.Application.Interfaces.Services;
+using Backend.Domain.Entities;
+using Backend.Domain.Interfaces;
 using GameDevJobs.Application.Exceptions;
-using GameDevJobs.Application.Interfaces.Services;
-using GameDevJobs.Domain.Entities;
-using GameDevJobs.Domain.Interfaces;
 
-namespace GameDevJobs.Application.Services;
+namespace Backend.Application.Services;
 public class WorkingTimesService : IWorkingTimesService
 {
     private const string NOT_FOUND_MESSAGE = "Working time with this id does not exist.";

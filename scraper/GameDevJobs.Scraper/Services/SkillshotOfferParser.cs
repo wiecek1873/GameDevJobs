@@ -1,9 +1,9 @@
 ﻿using GameDevJobs.Application.Dto.Companies;
 using GameDevJobs.Application.Dto.Offers;
-using GameDevJobs.Scraper.Interfaces;
 using HtmlAgilityPack;
+using Scraper.WebApi.Interfaces;
 
-namespace GameDevJobs.Application.Parsers;
+namespace Scraper.WebApi.Services;
 public class SkillshotOfferParser : IParserService<RequestOfferDto>
 {
     public RequestOfferDto Parse(string html)
@@ -30,33 +30,33 @@ public class SkillshotOfferParser : IParserService<RequestOfferDto>
 
     private string parseTitle(HtmlDocument htmlDocument)
     {
-        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/h1").InnerText.Replace("\n", String.Empty);
+        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/h1").InnerText.Replace("\n", string.Empty);
     }
 
     private string parseCompanyName(HtmlDocument htmlDocument)
     {
         if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
-            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[1]").InnerText.Replace("\n", String.Empty);
+            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[1]").InnerText.Replace("\n", string.Empty);
         else
-            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b/a").InnerText.Replace("\n", String.Empty);
+            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b/a").InnerText.Replace("\n", string.Empty);
     }
 
     private string parseLocationName(HtmlDocument htmlDocument)
     {
         if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
-            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[2]").InnerText.Replace("\n", String.Empty);
+            return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[2]").InnerText.Replace("\n", string.Empty);
         else
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[2]").NextSibling.InnerText;
     }
 
     private string parseCategoryName(HtmlDocument htmlDocument)
     {
-        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[2]").InnerText.Replace("\n", String.Empty);
+        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[2]").InnerText.Replace("\n", string.Empty);
     }
 
     private string parseWorkingTimeName(HtmlDocument htmlDocument)
     {
-        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[1]").InnerText.Replace("\n", String.Empty);
+        return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[2]/span[1]").InnerText.Replace("\n", string.Empty);
     }
 
     private string? parseSeniorityName(HtmlDocument htmlDocument)

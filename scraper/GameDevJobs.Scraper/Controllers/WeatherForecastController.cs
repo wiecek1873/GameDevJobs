@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Scraper.WebApi;
 
-namespace GameDevJobs.Scraper.Controllers;
+namespace Scraper.WebApi.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase

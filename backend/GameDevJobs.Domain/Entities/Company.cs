@@ -1,4 +1,4 @@
-﻿namespace GameDevJobs.Domain.Entities;
+﻿namespace Backend.Domain.Entities;
 
 public class Company
 {

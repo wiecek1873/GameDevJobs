@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameDevJobs.Application.Dto.Seniorities;
+namespace Backend.Application.Dto.Seniorities;
 public class RequestSeniorityDto
 {
     [Required(ErrorMessage = "Location name is required")]

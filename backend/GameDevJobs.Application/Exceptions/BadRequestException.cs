@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameDevJobs.Application.Exceptions;
+namespace Backend.Application.Exceptions;
 public class BadRequestException : Exception
 {
     public BadRequestException() { }

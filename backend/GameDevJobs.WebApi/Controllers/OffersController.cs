@@ -1,9 +1,9 @@
-﻿using GameDevJobs.Application.Dto.Offers;
-using GameDevJobs.Application.Interfaces.Services;
+﻿using Backend.Application.Dto.Offers;
+using Backend.Application.Interfaces.Services;
 using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameDevJobs.WebApi.Controllers;
+namespace Backend.WebApi.Controllers;
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]

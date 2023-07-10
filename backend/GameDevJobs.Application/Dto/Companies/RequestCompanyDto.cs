@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameDevJobs.Application.Dto.Companies;
+namespace Backend.Application.Dto.Companies;
 public class RequestCompanyDto
 {
     [Required(ErrorMessage = "Company name is required")]

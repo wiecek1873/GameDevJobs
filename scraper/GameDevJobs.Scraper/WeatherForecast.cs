@@ -1,4 +1,4 @@
-namespace GameDevJobs.Scraper;
+namespace Scraper.WebApi;
 
 public class WeatherForecast
 {
