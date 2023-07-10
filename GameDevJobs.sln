@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.WebApi", "backend\G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scraper.WebApi", "scraper\GameDevJobs.Scraper\Scraper.WebApi.csproj", "{F03716E8-E60D-48E1-8E7D-26B917B53700}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{FED3FDB4-E188-4AC2-95C5-A59004677684}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scraper", "scraper", "{30D559AC-80D4-44B4-B49B-B5DCECF102EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D121B4E2-E81D-410E-96F1-F43ACAA53911} = {FED3FDB4-E188-4AC2-95C5-A59004677684}
+		{DF967ABF-9234-41F0-B36F-88A28BBA3B39} = {FED3FDB4-E188-4AC2-95C5-A59004677684}
+		{177A7206-7FDA-4430-A43C-E8E1AD796486} = {FED3FDB4-E188-4AC2-95C5-A59004677684}
+		{15FEA7EA-2CF8-4C47-A9D2-B2B5AB9D6AE1} = {FED3FDB4-E188-4AC2-95C5-A59004677684}
+		{F03716E8-E60D-48E1-8E7D-26B917B53700} = {30D559AC-80D4-44B4-B49B-B5DCECF102EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5106C19-79CE-478C-AEDE-8318F19B1F22}
