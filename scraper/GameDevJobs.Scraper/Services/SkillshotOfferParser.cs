@@ -4,7 +4,6 @@ using GameDevJobs.Scraper.Interfaces;
 using HtmlAgilityPack;
 
 namespace GameDevJobs.Application.Parsers;
-
 public class SkillshotOfferParser : IParserService<RequestOfferDto>
 {
     public RequestOfferDto Parse(string html)

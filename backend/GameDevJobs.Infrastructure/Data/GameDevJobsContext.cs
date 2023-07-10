@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Data;
-
 public class GameDevJobsContext : DbContext
 {
     public DbSet<Offer> Offers { get; set; } = null!;

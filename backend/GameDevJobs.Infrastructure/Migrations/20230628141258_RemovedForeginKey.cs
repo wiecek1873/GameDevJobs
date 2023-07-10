@@ -2,21 +2,19 @@
 
 #nullable disable
 
-namespace GameDevJobs.Migrations
+namespace GameDevJobs.Migrations;
+/// <inheritdoc />
+public partial class RemovedForeginKey : Migration
 {
     /// <inheritdoc />
-    public partial class RemovedForeginKey : Migration
+    protected override void Up(MigrationBuilder migrationBuilder)
     {
-        /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
 
-        }
+    }
 
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+    /// <inheritdoc />
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
 
-        }
     }
 }

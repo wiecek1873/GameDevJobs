@@ -4,7 +4,6 @@ using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameDevJobs.WebApi.Controllers;
-
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]
@@ -51,7 +50,7 @@ public class CompaniesController : ControllerBase
 
     [HttpDelete("{companyId}")]
     public async Task<IActionResult> DeleteCategory(int companyId)
-    { 
+    {
         await _companiesService.DeleteCompanyAsync(companyId);
 
         return Ok();

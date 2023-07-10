@@ -1,7 +1,6 @@
 ﻿using GameDevJobs.Application.Dto.WorkingTimes;
 
 namespace GameDevJobs.Application.Interfaces.Services;
-
 public interface IWorkingTimesService
 {
     Task<ICollection<WorkingTimeDto>> GetWorkingTimesAsync();

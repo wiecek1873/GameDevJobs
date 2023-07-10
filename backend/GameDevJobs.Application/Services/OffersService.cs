@@ -6,7 +6,6 @@ using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 
 namespace GameDevJobs.Application.Services;
-
 public class OffersService : IOffersService
 {
     private const string NOT_FOUND_MESSAGE = "Offer with this id does not exist.";
@@ -64,7 +63,7 @@ public class OffersService : IOffersService
         offerToCreate.LocationId = location.Id;
 
         var category = await _categoriesRepository.GetCategoryAsync(requestOfferDto.CategoryName);
-        category ??= await _categoriesRepository.CreateCategoryAsync(new Category() { Name = requestOfferDto.CategoryName});
+        category ??= await _categoriesRepository.CreateCategoryAsync(new Category() { Name = requestOfferDto.CategoryName });
 
         offerToCreate.CategoryId = category.Id;
 
@@ -73,7 +72,7 @@ public class OffersService : IOffersService
 
         offerToCreate.WorkingTimeId = workingTime.Id;
 
-        if(!string.IsNullOrEmpty(requestOfferDto.SeniorityName))
+        if (!string.IsNullOrEmpty(requestOfferDto.SeniorityName))
         {
             var seniority = await _senioritiesRepository.GetSeniorityAsync(requestOfferDto.SeniorityName);
             seniority ??= await _senioritiesRepository.CreateSeniorityAsync(new Seniority() { Name = requestOfferDto.SeniorityName });

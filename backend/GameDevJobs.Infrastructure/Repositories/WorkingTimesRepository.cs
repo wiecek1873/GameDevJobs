@@ -4,7 +4,6 @@ using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Infrastructure.Repositories;
-
 public class WorkingTimesRepository : IWorkingTimesRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;

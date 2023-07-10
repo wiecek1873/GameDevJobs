@@ -2,7 +2,6 @@
 using GameDevJobs.Scraper.Interfaces;
 
 namespace GameDevJobs.Application.Scrapers;
-
 public class SkillshotScraper : IScraperService
 {
     private readonly HttpClient _httpClient;

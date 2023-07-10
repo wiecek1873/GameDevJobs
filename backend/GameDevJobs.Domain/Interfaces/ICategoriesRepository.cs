@@ -1,7 +1,6 @@
 ﻿using GameDevJobs.Domain.Entities;
 
 namespace GameDevJobs.Domain.Interfaces;
-
 public interface ICategoriesRepository
 {
     Task<ICollection<Category>?> GetCategoriesAsync();

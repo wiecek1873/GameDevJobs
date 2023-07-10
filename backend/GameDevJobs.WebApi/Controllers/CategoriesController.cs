@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace GameDevJobs.WebApi.Controllers;
-
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]

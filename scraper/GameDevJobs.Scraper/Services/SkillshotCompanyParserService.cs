@@ -3,7 +3,6 @@ using GameDevJobs.Scraper.Interfaces;
 using HtmlAgilityPack;
 
 namespace GameDevJobs.Application.Parsers;
-
 public class SkillshotCompanyParserService : IParserService<RequestCompanyDto>
 {
     public RequestCompanyDto Parse(string html)

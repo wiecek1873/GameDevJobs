@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace GameDevJobs.Application.Dto.Offers;
-
 public class RequestOfferDto
 {
     [Required(ErrorMessage = "Title name is required")]

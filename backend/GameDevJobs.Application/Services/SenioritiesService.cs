@@ -6,7 +6,6 @@ using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 
 namespace GameDevJobs.Application.Services;
-
 public class SenioritiesService : ISenioritiesService
 {
     private const string NOT_FOUND_MESSAGE = "Seniority with this id does not exist.";

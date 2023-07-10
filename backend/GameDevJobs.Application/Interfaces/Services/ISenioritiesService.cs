@@ -1,7 +1,6 @@
 ﻿using GameDevJobs.Application.Dto.Seniorities;
 
 namespace GameDevJobs.Application.Interfaces.Services;
-
 public interface ISenioritiesService
 {
     Task<ICollection<SeniorityDto>> GetSeniorityAsync();

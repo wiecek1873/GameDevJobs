@@ -1,7 +1,6 @@
 ﻿using GameDevJobs.Application.Dto.Offers;
 
 namespace GameDevJobs.Application.Interfaces.Services;
-
 public interface IOffersService
 {
     Task<ICollection<OfferDto>> GetOffersAsync();

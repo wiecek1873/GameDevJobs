@@ -6,7 +6,6 @@ using GameDevJobs.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameDevJobs.WebApi.Controllers;
-
 [ApiController]
 [GlobalExceptionFilter]
 [Route("api/[controller]")]

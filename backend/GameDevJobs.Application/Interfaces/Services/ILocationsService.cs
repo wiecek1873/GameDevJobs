@@ -2,7 +2,6 @@
 using GameDevJobs.Application.Dto.Locations;
 
 namespace GameDevJobs.Application.Interfaces.Services;
-
 public interface ILocationsService
 {
     Task<ICollection<LocationDto>> GetLocationsAsync();

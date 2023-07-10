@@ -6,7 +6,6 @@ using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 
 namespace GameDevJobs.Application.Services;
-
 public class WorkingTimesService : IWorkingTimesService
 {
     private const string NOT_FOUND_MESSAGE = "Working time with this id does not exist.";
@@ -51,7 +50,7 @@ public class WorkingTimesService : IWorkingTimesService
 
     public async Task UpdateWorkingTimeAsync(int id, RequestWorkingTimeDto updatedWorkingTimeDto)
     {
-        if(await _workingTimesRepository.GetWorkingTimeAsync(id) == null)
+        if (await _workingTimesRepository.GetWorkingTimeAsync(id) == null)
             throw new NotFoundException(NOT_FOUND_MESSAGE);
 
         var updatedWorkingTime = _mapper.Map<WorkingTime>(updatedWorkingTimeDto);

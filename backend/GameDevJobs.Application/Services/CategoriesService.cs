@@ -6,7 +6,6 @@ using GameDevJobs.Domain.Entities;
 using GameDevJobs.Domain.Interfaces;
 
 namespace GameDevJobs.Application.Services;
-
 public class CategoriesService : ICategoriesService
 {
     private const string NOT_FOUND_MESSAGE = "Category with this id does not exist";

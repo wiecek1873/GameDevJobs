@@ -1,11 +1,10 @@
-﻿namespace GameDevJobs.Application.Exceptions
+﻿namespace GameDevJobs.Application.Exceptions;
+
+public class NotFoundException : Exception
 {
-    public class NotFoundException : Exception
-    {
-        public NotFoundException() { }
+    public NotFoundException() { }
 
-        public NotFoundException(string message) : base(message) { }
+    public NotFoundException(string message) : base(message) { }
 
-        public NotFoundException(string message, Exception inner) : base(message, inner) { }
-    }
+    public NotFoundException(string message, Exception inner) : base(message, inner) { }
 }

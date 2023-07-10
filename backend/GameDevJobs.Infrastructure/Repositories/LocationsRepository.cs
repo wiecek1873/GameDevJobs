@@ -4,7 +4,6 @@ using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Infrastructure.Repositories;
-
 public class LocationsRepository : ILocationsRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;
@@ -41,7 +40,7 @@ public class LocationsRepository : ILocationsRepository
     {
         var locationToUpdate = await _gameDevJobsContext.Locations.SingleOrDefaultAsync(l => l.Id ==  id);
 
-        if(locationToUpdate != null) 
+        if (locationToUpdate != null)
         {
             locationToUpdate.Name = updatedLocation.Name;
         }
@@ -53,7 +52,7 @@ public class LocationsRepository : ILocationsRepository
     {
         var locationToDelete = await _gameDevJobsContext.Locations.SingleOrDefaultAsync(l => l.Id == id);
 
-        if(locationToDelete != null) 
+        if (locationToDelete != null)
         {
             _gameDevJobsContext.Locations.Remove(locationToDelete);
         }

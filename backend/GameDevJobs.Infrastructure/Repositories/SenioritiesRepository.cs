@@ -4,7 +4,6 @@ using GameDevJobs.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameDevJobs.Infrastructure.Repositories;
-
 public class SenioritiesRepository : ISenioritiesRepository
 {
     private readonly GameDevJobsContext _gameDevJobsContext;
@@ -54,7 +53,7 @@ public class SenioritiesRepository : ISenioritiesRepository
     {
         var seniorityToDelete = await _gameDevJobsContext.Seniorities.SingleOrDefaultAsync(s => s.Id == id);
 
-        if(seniorityToDelete == null) 
+        if (seniorityToDelete == null)
         {
             return;
         }
