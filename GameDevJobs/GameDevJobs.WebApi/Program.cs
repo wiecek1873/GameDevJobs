@@ -1,5 +1,5 @@
-using AutoMapper;
 using GameDevJobs.Application.Interfaces.Services;
+using GameDevJobs.Application.Parsers;
 using GameDevJobs.Application.Scrapers;
 using GameDevJobs.Application.Services;
 using GameDevJobs.Data;
@@ -59,8 +59,39 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+//todo Remove this. Only for quick testing
 var httpClient = new HttpClient();
 var scraper = new SkillshotScraper(httpClient);
-var xd = await scraper.CallUrlAsync("https://www.skillshot.pl/jobs/32104");
+var offerParser = new SkillshotOfferParser();
+//var xd = await scraper.CallUrlAsync("https://www.skillshot.pl/users/3614");
+//var xdd = await scraper.CallUrlAsync("https://www.skillshot.pl/jobs/32100-3d-artist-at-spellarena-sp-z-o-o");
+
+
+for (int i = 0; i < 100; i++)
+{
+    try
+    {
+        var scappedHTML = await scraper.CallUrlAsync("https://www.skillshot.pl/jobs/" + i);
+        var offer = offerParser.Parse(scappedHTML);
+        System.Diagnostics.Debug.WriteLine(offer.Title);
+        System.Diagnostics.Debug.WriteLine(offer.CompanyName);
+        System.Diagnostics.Debug.WriteLine(offer.LocationName);
+        System.Diagnostics.Debug.WriteLine(offer.CategoryName);
+        System.Diagnostics.Debug.WriteLine(offer.WorkingTimeName);
+        System.Diagnostics.Debug.WriteLine(offer.SeniorityName);
+        System.Diagnostics.Debug.WriteLine(offer.SalaryMin);
+        System.Diagnostics.Debug.WriteLine(offer.SalaryMax);
+        System.Diagnostics.Debug.WriteLine(offer.Date);
+        System.Diagnostics.Debug.WriteLine(offer.Views);
+        System.Diagnostics.Debug.WriteLine(offer.Url);
+
+    }
+    catch
+    {
+        continue;
+    }
+
+}
 
 app.Run();

@@ -15,6 +15,7 @@ public class SkillshotScraper : IScraper
     public async Task<string> CallUrlAsync(string url)
     {
         using var response = await _httpClient.GetAsync(url);
+        var xd = response.StatusCode;
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync();

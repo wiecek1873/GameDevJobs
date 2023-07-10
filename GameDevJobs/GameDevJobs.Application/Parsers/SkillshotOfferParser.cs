@@ -36,7 +36,7 @@ public class SkillshotOfferParser : IParser<RequestOfferDto>
 
     private string parseCompanyName(HtmlDocument htmlDocument)
     {
-        if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[1]").InnerText == "dla")
+        if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[1]").InnerText.Replace("\n", String.Empty);
         else
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b/a").InnerText.Replace("\n", String.Empty);
@@ -44,7 +44,7 @@ public class SkillshotOfferParser : IParser<RequestOfferDto>
 
     private string parseLocationName(HtmlDocument htmlDocument)
     {
-        if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[1]").InnerText == "dla")
+        if (htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[3]")?.InnerText == "opublikowane przez")
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/b[2]").InnerText.Replace("\n", String.Empty);
         else
             return htmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"job_presentation\"]/p[1]/span[2]").NextSibling.InnerText;
