@@ -1,7 +1,5 @@
 ﻿using Backend.Application.Dto.WorkingTimes;
 using Backend.Application.Interfaces.Services;
-using Backend.Application.Dto.Locations;
-using Backend.Application.Dto.Seniorities;
 using Backend.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
